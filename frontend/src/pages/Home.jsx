@@ -20,10 +20,7 @@ function Home() {
                 setNotes(data);
                 console.log(data);
             })
-            .catch((err) => {
-                alert(`错误：${err.response ? err.response.data : err.message}`);
-                console.error(err);
-            });
+            .catch((err) => alert(err));
     };
 
     const deleteNote = (id) => {
@@ -44,7 +41,6 @@ function Home() {
             .then((res) => {
                 if (res.status === 201) alert("Note created!");
                 else alert("Failed to make note.");
-                alert(`Before we get`);
                 getNotes();
             })
             .catch((err) => alert(err));
